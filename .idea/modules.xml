@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MetroidvaniaGame.iml" filepath="$PROJECT_DIR$/MetroidvaniaGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Jinn.iml" filepath="$PROJECT_DIR$/.idea/Jinn.iml" />
     </modules>
   </component>
 </project>
