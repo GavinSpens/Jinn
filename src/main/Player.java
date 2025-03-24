@@ -1,5 +1,7 @@
 package main;
 
+import static main.TileType.*;
+
 public class Player {
     private final int floor = 500;
 
@@ -159,7 +161,7 @@ public class Player {
         }
         if (collisionUp) {
             y += distToBottom;
-            velY = velY / -bumpHeadFraction;
+            velY = velY * -bumpHeadFraction;
         }
         if (collisionRight) {
             x -= distToLeft;
@@ -206,19 +208,19 @@ public class Player {
         Tile rightTileBottom = level.tiles[rightPixel / size][bottomEdge / size];
 
         collisionDown =
-                bottomTileLeft.tileType == Tile.TileType.FLOOR
-                || bottomTileRight.tileType == Tile.TileType.FLOOR;
+                bottomTileLeft.tileType == FLOOR
+                || bottomTileRight.tileType == FLOOR;
 
         collisionUp =
-                topTileLeft.tileType == Tile.TileType.FLOOR
-                || topTileRight.tileType == Tile.TileType.FLOOR;
+                topTileLeft.tileType == FLOOR
+                || topTileRight.tileType == FLOOR;
 
         collisionLeft =
-                leftTileTop.tileType == Tile.TileType.FLOOR
-                || leftTileBottom.tileType == Tile.TileType.FLOOR;
+                leftTileTop.tileType == FLOOR
+                || leftTileBottom.tileType == FLOOR;
 
         collisionRight =
-                rightTileTop.tileType == Tile.TileType.FLOOR
-                || rightTileBottom.tileType == Tile.TileType.FLOOR;
+                rightTileTop.tileType == FLOOR
+                || rightTileBottom.tileType == FLOOR;
     }
 }

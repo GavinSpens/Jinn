@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5995063-db56-454f-b7bc-1e33020f6222" name="Changes" comment="initial" />
+    <list default="true" id="c5995063-db56-454f-b7bc-1e33020f6222" name="Changes" comment="initial">
+      <change afterPath="$PROJECT_DIR$/src/main/Coordinate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/GameObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/HitBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/HitBoxType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Settings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/TileType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Tuple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Vector2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Jinn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Jinn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetroidvaniaGame.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Collisions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Tile.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,25 +31,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Jinn" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "GavinSpens"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;GavinSpens&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/GavinSpens/Jinn",
-    "accountId": "e964321d-8a3e-4081-98a5-d72b33c9f960"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/GavinSpens/Jinn&quot;,
+    &quot;accountId&quot;: &quot;e964321d-8a3e-4081-98a5-d72b33c9f960&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -41,20 +60,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/gavin/OneDrive/Desktop/Random_programming/Java/MetroidvaniaGame"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gavin/OneDrive/Desktop/CS240/chess&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gavin\OneDrive\Desktop\Random_programming\Java\Jinn\.idea" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
-      <module name="MetroidvaniaGame" />
+      <module name="Jinn" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -77,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741293186724</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="initial">
+      <option name="closed" value="true" />
+      <created>1741297981432</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741297981432</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

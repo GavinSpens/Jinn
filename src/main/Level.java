@@ -8,14 +8,20 @@ import java.io.IOException;
 public class Level {
     public Tile[][] tiles;
 
+
+
     public Level(int levelNum) {
         getLevelData("Level" + levelNum + ".txt");
+    }
+
+    public TileType getTileAtPixel(int x, int y) {
+        return tiles[x / Settings.tileSize][y / Settings.tileSize].tileType;
     }
 
     private void getLevelData(String filename) {
         int[][] levelData;
         levelData = new int[16][12];
-        String filePath = "C:\\Users\\gavin\\OneDrive\\Desktop\\Random_programming\\Java\\MetroidvaniaGame\\src\\data\\" + filename;
+        String filePath = "C:\\Users\\gavin\\OneDrive\\Desktop\\Random_programming\\Java\\Jinn\\src\\data\\" + filename;
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             int lineNum = 0;

@@ -1,11 +1,6 @@
 package main;
 
 public class Tile {
-    public enum TileType {
-        NOTHING,
-        FLOOR,
-    }
-
     public TileType tileType;
 
     public Tile(TileType type) {
