@@ -1,4 +1,7 @@
-package main;
+package level;
+
+import data.Settings;
+import utility.Coordinate;
 
 import java.awt.*;
 import java.io.BufferedReader;
@@ -8,13 +11,13 @@ import java.io.IOException;
 public class Level {
     public Tile[][] tiles;
 
-
-
     public Level(int levelNum) {
         getLevelData("Level" + levelNum + ".txt");
     }
 
-    public TileType getTileAtPixel(int x, int y) {
+    public TileType getTileAtPixel(Coordinate coordinate) {
+        var x = coordinate.x();
+        var y = coordinate.y();
         return tiles[x / Settings.tileSize][y / Settings.tileSize].tileType;
     }
 
@@ -55,7 +58,7 @@ public class Level {
                     case FLOOR:
                         g2.setColor(Color.WHITE);
                         g2.fillRect(x, y, 50, 50);
-                    case NOTHING:
+                    case NONE:
                         continue;
                     default:
                         throw new RuntimeException();

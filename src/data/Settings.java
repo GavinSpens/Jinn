@@ -1,4 +1,4 @@
-package main;
+package data;
 
 public abstract class Settings {
     public static final int originalTileSize = 10;

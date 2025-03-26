@@ -1,6 +1,6 @@
-package main;
+package level;
 
 public enum TileType {
-    NOTHING,
+    NONE,
     FLOOR,
 }

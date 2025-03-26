@@ -1,6 +1,10 @@
-package main;
+package gameobject;
 
-import static main.TileType.*;
+import level.Level;
+import level.Tile;
+import main.KeyHandler;
+
+import static level.TileType.*;
 
 public class Player {
     private final int floor = 500;

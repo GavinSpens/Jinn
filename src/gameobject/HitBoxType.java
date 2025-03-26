@@ -1,4 +1,4 @@
-package main;
+package gameobject;
 
 public enum HitBoxType {
     FLOOR,

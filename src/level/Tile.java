@@ -1,4 +1,4 @@
-package main;
+package level;
 
 public class Tile {
     public TileType tileType;
@@ -10,7 +10,7 @@ public class Tile {
     public Tile(int type) {
         switch (type) {
             case (0) ->
-                tileType = TileType.NOTHING;
+                tileType = TileType.NONE;
             case (1) ->
                 tileType = TileType.FLOOR;
             default ->

@@ -4,24 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5995063-db56-454f-b7bc-1e33020f6222" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/src/main/Coordinate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/GameObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/HitBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/HitBoxType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/TileType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Tuple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Vector2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Jinn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Jinn.iml" afterDir="false" />
+    <list default="true" id="c5995063-db56-454f-b7bc-1e33020f6222" name="Changes" comment="Lots of stuff, mostly making a game engine">
+      <change afterPath="$PROJECT_DIR$/src/gameobject/LevelCollisionsObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MetroidvaniaGame.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Collisions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Coordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/HitBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/HitBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/HitBoxType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/HitBoxType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/level/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/level/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/level/TileType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Tuple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Vector2D.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -114,12 +112,21 @@
       <option name="project" value="LOCAL" />
       <updated>1741297981432</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Lots of stuff, mostly making a game engine">
+      <option name="closed" value="true" />
+      <created>1742839892769</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742839892769</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+    <MESSAGE value="Lots of stuff, mostly making a game engine" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lots of stuff, mostly making a game engine" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -1,4 +1,7 @@
-package main;
+package gameobject;
+
+import level.Level;
+import utility.Vector2D;
 
 public class HitBox {
     private final int x;

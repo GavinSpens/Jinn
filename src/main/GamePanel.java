@@ -1,23 +1,13 @@
 package main;
 
+import data.Settings;
+import gameobject.Player;
+import level.Level;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel implements Runnable {
-    // Settings
-//    final int originalTileSize = 10;
-//    final int scale = 5;
-//
-//    final int tileSize = originalTileSize * scale;
-//    final int maxScreenCol = 16;
-//    final int maxScreenRow = 12;
-//
-//    final int screenWidth = tileSize * maxScreenCol;
-//    final int screenHeight = tileSize * maxScreenRow;
-//
-//    final int FPS = 60;
-
-
     KeyHandler keyHandler = new KeyHandler();
     Player player = new Player();
     Level level = new Level(1);

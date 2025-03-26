@@ -1,4 +1,4 @@
-package main;
+package gameobject;
 
 import java.awt.Color;
 
@@ -16,7 +16,7 @@ public class Enemy extends GameObject {
     public EnemyType type;
 
     public Enemy(int x, int y, EnemyType type) {
-        super(50, 50, x, y);
+        super(50, 50, x, y, HitBoxType.ENEMY);
         this.type = type;
     }
 }
