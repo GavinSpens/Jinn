@@ -1,21 +1,31 @@
 package main;
 
 import data.Settings;
-import gameobject.Player;
+import gameobject.*;
 import level.Level;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel implements Runnable {
-    KeyHandler keyHandler = new KeyHandler();
-    Player player = new Player();
-    Level level = new Level(1);
+    private final Settings settings;
+
+    private final Level level;
+    private final PlayerObject player;
 
     Thread gameThread;
+    KeyHandler keyHandler;
 
     public GamePanel() {
-        this.setPreferredSize(new Dimension(Settings.screenWidth, Settings.screenHeight));
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = toolkit.getScreenSize();
+        settings = new Settings(screenSize);
+
+        keyHandler = new KeyHandler();
+        level = new Level(1);
+        player = new PlayerObject();
+
+        this.setPreferredSize(screenSize);
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
         this.addKeyListener(keyHandler);
@@ -29,7 +39,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     @Override
     public void run() {
-        double drawInterval = (double) 1000000000 / Settings.FPS; // number of nanoseconds (ticks) between frames
+        double drawInterval = (double) 1000000000 / settings.FPS; // number of nanoseconds (ticks) between frames
         double nextDrawTime = System.nanoTime() + drawInterval;
 
         while (gameThread != null) {
@@ -57,10 +67,9 @@ public class GamePanel extends JPanel implements Runnable {
 
         Graphics2D g2 = (Graphics2D)g;
 
-        level.draw(g2);
+        level.draw(g2, this);
 
-        g2.setColor(Color.WHITE);
-        g2.fillRect(player.x, player.y, player.width, player.height);
+        player.draw(g2, this);
 
         g2.dispose();
     }

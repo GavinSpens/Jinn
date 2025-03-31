@@ -1,67 +1,131 @@
 package gameobject;
 
 
+import data.Settings;
 import level.Level;
 import level.TileType;
 import utility.Coordinate;
 import utility.Vector2D;
 
-import static level.TileType.*;
+import javax.swing.*;
+import java.awt.*;
 
 public class GameObject {
-    private LevelCollisionsObject levelCollisions;
+    private final int tileSize;
 
     public final int width;
     public final int height;
     public int x;
     public int y;
-
-    public HitBox bodyHitBox;
-
     public Vector2D vel;
 
-    public GameObject(int width, int height, int x, int y, HitBoxType hitboxType) {
+    private final int extraWidthChecks;
+    private final int extraHeightChecks;
+
+    public HitBox bodyHitBox;
+    public Sprite sprite;
+
+    public GameObject(int width, int height, int x, int y, HitBoxType hitboxType, Sprite sprite) {
+        tileSize = Settings.getInstance().TILE_SIZE;
+
         this.width = width;
         this.height = height;
         this.x = x;
         this.y = y;
+        this.vel = new Vector2D();
+
+        extraWidthChecks = (width - 2) / tileSize;
+        extraHeightChecks = (height - 2) / tileSize;
+
+        if (sprite != null) {
+            this.sprite = sprite;
+        }
         if (hitboxType != null) {
             bodyHitBox = new HitBox(x, y, width, height, hitboxType);
         }
-        vel = new Vector2D(0,0);
-        levelCollisions = new LevelCollisionsObject();
+    }
+
+    public void draw(Graphics2D g2, JPanel jPanel) {
+        sprite.draw(x, y, g2, jPanel);
     }
 
     public boolean checkCollision(GameObject other) {
         return bodyHitBox.checkCollision(other.bodyHitBox);
     }
 
-    public void checkCollisions(Level level) {
-        var topLeft = checkTopLeftCollisions(level);
-        var topRight = checkTopRightCollisions(level);
-        var bottomLeft = checkBottomLeftCollisions(level);
-        var bottomRight = checkBottomRightCollisions(level);
-        
-        levelCollisions = new LevelCollisionsObject(topLeft, topRight, bottomLeft, bottomRight);
+    public TileType checkCollisions(Level level) {
+        int nx = x + (int)vel.x;
+        int ny = y + (int)vel.y;
+
+        // rightmost and lowermost pixel of object
+        int right = nx + width - 1;
+        int down = ny + height - 1;
+
+        var upLeftPixel = new Coordinate(nx, ny);
+        var upRightPixel = new Coordinate(right, ny);
+        var downLeftPixel = new Coordinate(nx, down);
+        var downRightPixel = new Coordinate(right, down);
+
+        // get corner TileTypes
+        var upLeft = level.getTileAtPixel(upLeftPixel);
+        var upRight = level.getTileAtPixel(upRightPixel);
+        var downLeft = level.getTileAtPixel(downLeftPixel);
+        var downRight = level.getTileAtPixel(downRightPixel);
+
+        var highestPriority = getHigherPriority(upLeft, upRight);
+        highestPriority = getHigherPriority(highestPriority, downLeft);
+        highestPriority = getHigherPriority(highestPriority, downRight);
+
+        // check collisions along edges
+        // if width or height is greater than tile size
+        for (int i = 0; i < extraWidthChecks; i++) {
+
+            int pixel_x = nx + ((i + 1) * tileSize);
+
+            var upPixel = new Coordinate(pixel_x, ny);
+            var downPixel = new Coordinate(pixel_x, down);
+
+            var thisUpTile = level.getTileAtPixel(upPixel);
+            var thisDownTile = level.getTileAtPixel(downPixel);
+
+            highestPriority = getHigherPriority(highestPriority, thisUpTile);
+            highestPriority = getHigherPriority(highestPriority, thisDownTile);
+        }
+
+        for (int i = 0; i < extraHeightChecks; i++) {
+
+            int pixel_y = ny + ((i + 1) * tileSize);
+
+            var leftPixel = new Coordinate(nx, pixel_y);
+            var rightPixel = new Coordinate(right, pixel_y);
+
+            var thisLeftTile = level.getTileAtPixel(leftPixel);
+            var thisRightTile = level.getTileAtPixel(rightPixel);
+
+            highestPriority = getHigherPriority(highestPriority, thisLeftTile);
+            highestPriority = getHigherPriority(highestPriority, thisRightTile);
+        }
+
+        return highestPriority;
     }
 
-    private TileType checkTopLeftCollisions(Level level) {
-        Coordinate pixel = new Coordinate(x, y);
-        return level.getTileAtPixel(pixel);
+    private TileType getHigherPriority(TileType tile1, TileType tile2) {
+        return tile1.compareTo(tile2) > 0 ? tile1 : tile2;
     }
 
-    private TileType checkTopRightCollisions(Level level) {
-        Coordinate pixel = new Coordinate(x + width - 1, y);
-        return level.getTileAtPixel(pixel);
+    public int distToNextTileUp() {
+        return (y + height - 1) % tileSize + 1;
     }
 
-    private TileType checkBottomLeftCollisions(Level level) {
-        Coordinate pixel = new Coordinate(x, y + height - 1);
-        return level.getTileAtPixel(pixel);
+    public int distToNextTileDown() {
+        return tileSize - y % tileSize;
     }
 
-    private TileType checkBottomRightCollisions(Level level) {
-        Coordinate pixel = new Coordinate(x + width - 1, y + height - 1);
-        return level.getTileAtPixel(pixel);
+    public int distToNextTileLeft() {
+        return (x + width - 1) % tileSize + 1;
+    }
+
+    public int distToNextTileRight() {
+        return tileSize - x % tileSize;
     }
 }

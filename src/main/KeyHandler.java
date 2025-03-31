@@ -9,9 +9,7 @@ public class KeyHandler implements KeyListener {
     public boolean spacePressed, spaceJustPressed;
 
     @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
+    public void keyTyped(KeyEvent e) {}
 
     @Override
     public void keyPressed(KeyEvent e) {

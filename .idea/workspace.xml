@@ -4,22 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5995063-db56-454f-b7bc-1e33020f6222" name="Changes" comment="Lots of stuff, mostly making a game engine">
-      <change afterPath="$PROJECT_DIR$/src/gameobject/LevelCollisionsObject.java" afterDir="false" />
+    <list default="true" id="c5995063-db56-454f-b7bc-1e33020f6222" name="Changes" comment="cleaning up stuff">
+      <change afterPath="$PROJECT_DIR$/src/gameobject/PlayerObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameobject/Sprite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Level1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameobject/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameobject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameobject/HitBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/HitBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameobject/LevelCollisionsObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameobject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/level/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/level/TileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/level/TileType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/HitBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/HitBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/HitBoxType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/HitBoxType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/level/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/level/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/TileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/level/TileType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Tuple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Vector2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Coordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Vector2D.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,6 +51,9 @@
     &quot;accountId&quot;: &quot;e964321d-8a3e-4081-98a5-d72b33c9f960&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -58,21 +63,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gavin/OneDrive/Desktop/CS240/chess&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/gavin/OneDrive/Desktop/CS240/chess",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gavin\OneDrive\Desktop\Random_programming\Java\Jinn\.idea" />
@@ -120,20 +125,37 @@
       <option name="project" value="LOCAL" />
       <updated>1742839892769</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="cleaning up stuff">
+      <option name="closed" value="true" />
+      <created>1743023571177</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743023571177</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
     <MESSAGE value="Lots of stuff, mostly making a game engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lots of stuff, mostly making a game engine" />
+    <MESSAGE value="cleaning up stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning up stuff" />
   </component>
   <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="velY" />
-        <watch expression="y" />
-      </configuration>
-    </watches-manager>
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/KeyHandler.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gameobject/PlayerObject.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

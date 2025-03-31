@@ -51,7 +51,7 @@ public class Player {
     }
 
     public void update(KeyHandler keyHandler, Level level) {
-        // Calculate x velocity from left/right key presses
+        // Calculate x velocity from upLeft/upRight key presses
         if (keyHandler.leftPressed ^ keyHandler.rightPressed) {
             if (keyHandler.leftPressed) {
                 velX -= accelX;
@@ -96,10 +96,10 @@ public class Player {
         y += velY;
 
         // checks collisions and corrects player position
-        checkCollisions(level);
+        checkCollisions_(level);
     }
 
-    private void checkCollisions(Level level) {
+    private void checkCollisions_(Level level) {
         levelCollisions(level);
 
         if (collisionRight && collisionLeft) {

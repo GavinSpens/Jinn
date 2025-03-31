@@ -20,14 +20,14 @@ public class HitBox {
 
     public boolean checkCollision(HitBox other) {
         // the -1's are because 1 pixel has width 1
-        // x + width is the pixel next to the right edge, not on the right edge.
+        // x + width is the pixel next to the upRight edge, not on the upRight edge.
 
         if (other.x + other.width - 1 < x) {
-            // other is outside to the left
+            // other is outside to the upLeft
             return false;
         }
         if (x + width - 1 < other.x) {
-            // other is outside to the right
+            // other is outside to the upRight
             return false;
         }
         if (other.y + other.height - 1 < y) {

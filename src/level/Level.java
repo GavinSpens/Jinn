@@ -3,32 +3,49 @@ package level;
 import data.Settings;
 import utility.Coordinate;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class Level {
+    private final int tileSize;
+    private final int tilesX = 32;
+    private final int tilesY = 18;
+    private final String imgPath = "C:\\Users\\gavin\\OneDrive\\Desktop\\Random_programming\\Java\\Jinn\\src\\data\\images\\block.png";
+    private final Image block;
+
     public Tile[][] tiles;
 
     public Level(int levelNum) {
+        tileSize = Settings.getInstance().getTileSizeInRealPixels();
         getLevelData("Level" + levelNum + ".txt");
+
+        try {
+            block = ImageIO.read(new File(imgPath));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public TileType getTileAtPixel(Coordinate coordinate) {
-        var x = coordinate.x();
-        var y = coordinate.y();
-        return tiles[x / Settings.tileSize][y / Settings.tileSize].tileType;
+        int xTile = coordinate.getXTile();
+        int yTile = coordinate.getYTile();
+        return tiles[xTile][yTile].tileType;
     }
 
     private void getLevelData(String filename) {
         int[][] levelData;
-        levelData = new int[16][12];
+        levelData = new int[tilesX][tilesY];
         String filePath = "C:\\Users\\gavin\\OneDrive\\Desktop\\Random_programming\\Java\\Jinn\\src\\data\\" + filename;
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             int lineNum = 0;
             while ((line = reader.readLine()) != null) {
+                line = line.replace(" ", "");
                 for (int i = 0; i < line.length(); i++) {
                     levelData[i][lineNum] = line.charAt(i) - '0';
                 }
@@ -41,7 +58,7 @@ public class Level {
     }
 
     private void createLevel(int[][] levelData) {
-        tiles = new Tile[16][12];
+        tiles = new Tile[tilesX][tilesY];
         for (int i = 0; i < tiles.length; i++) {
             for (int j = 0; j < tiles[0].length; j++) {
                 tiles[i][j] = new Tile(levelData[i][j]);
@@ -49,15 +66,16 @@ public class Level {
         }
     }
 
-    public void draw(Graphics2D g2) {
+    public void draw(Graphics2D g2, JPanel jPanel) {
         for (int i = 0; i < tiles.length; i++) {
             for (int j = 0; j < tiles[0].length; j++) {
-                int x = i * 50;
-                int y = j * 50;
+                int x = i * tileSize;
+                int y = j * tileSize;
                 switch (tiles[i][j].tileType) {
                     case FLOOR:
-                        g2.setColor(Color.WHITE);
-                        g2.fillRect(x, y, 50, 50);
+//                        g2.setColor(Color.WHITE);
+//                        g2.fillRect(x, y, tileSize, tileSize);
+                        g2.drawImage(block, x, y, tileSize, tileSize, jPanel);
                     case NONE:
                         continue;
                     default:
