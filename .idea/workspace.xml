@@ -4,24 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5995063-db56-454f-b7bc-1e33020f6222" name="Changes" comment="cleaning up stuff">
-      <change afterPath="$PROJECT_DIR$/src/gameobject/PlayerObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameobject/Sprite.java" afterDir="false" />
+    <list default="true" id="c5995063-db56-454f-b7bc-1e33020f6222" name="Changes" comment="lots">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Level1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameobject/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameobject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameobject/HitBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/HitBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameobject/LevelCollisionsObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameobject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/level/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/level/TileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/level/TileType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameobject/PlayerObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/PlayerObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Vector2D.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +54,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -133,29 +122,22 @@
       <option name="project" value="LOCAL" />
       <updated>1743023571177</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lots">
+      <option name="closed" value="true" />
+      <created>1743460657858</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743460657858</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
     <MESSAGE value="Lots of stuff, mostly making a game engine" />
     <MESSAGE value="cleaning up stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaning up stuff" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/KeyHandler.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/gameobject/PlayerObject.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="lots" />
+    <option name="LAST_COMMIT_MESSAGE" value="lots" />
   </component>
 </project>

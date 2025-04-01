@@ -54,16 +54,13 @@ public class GameObject {
     }
 
     public TileType checkCollisions(Level level) {
-        int nx = x + (int)vel.x;
-        int ny = y + (int)vel.y;
-
         // rightmost and lowermost pixel of object
-        int right = nx + width - 1;
-        int down = ny + height - 1;
+        int right = x + width - 1;
+        int down = y + height - 1;
 
-        var upLeftPixel = new Coordinate(nx, ny);
-        var upRightPixel = new Coordinate(right, ny);
-        var downLeftPixel = new Coordinate(nx, down);
+        var upLeftPixel = new Coordinate(x, y);
+        var upRightPixel = new Coordinate(right, y);
+        var downLeftPixel = new Coordinate(x, down);
         var downRightPixel = new Coordinate(right, down);
 
         // get corner TileTypes
@@ -80,9 +77,9 @@ public class GameObject {
         // if width or height is greater than tile size
         for (int i = 0; i < extraWidthChecks; i++) {
 
-            int pixel_x = nx + ((i + 1) * tileSize);
+            int pixel_x = x + ((i + 1) * tileSize);
 
-            var upPixel = new Coordinate(pixel_x, ny);
+            var upPixel = new Coordinate(pixel_x, y);
             var downPixel = new Coordinate(pixel_x, down);
 
             var thisUpTile = level.getTileAtPixel(upPixel);
@@ -94,9 +91,9 @@ public class GameObject {
 
         for (int i = 0; i < extraHeightChecks; i++) {
 
-            int pixel_y = ny + ((i + 1) * tileSize);
+            int pixel_y = y + ((i + 1) * tileSize);
 
-            var leftPixel = new Coordinate(nx, pixel_y);
+            var leftPixel = new Coordinate(x, pixel_y);
             var rightPixel = new Coordinate(right, pixel_y);
 
             var thisLeftTile = level.getTileAtPixel(leftPixel);

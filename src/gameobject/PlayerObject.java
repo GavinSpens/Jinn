@@ -28,13 +28,14 @@ public class PlayerObject extends GameObject {
 
         accountForMaxSpeed();
 
-        TileType collisions = checkCollisions(level);
-
         if ((int)vel.y == 0) {
             vel.y = 1;
         }
+
         x += (int)vel.x;
         y += (int)vel.y;
+
+        TileType collisions = checkCollisions(level);
 
         updateForCollisions(collisions, keyHandler);
     }
@@ -129,10 +130,9 @@ public class PlayerObject extends GameObject {
         y -= distToNextTileUp();
 
         if (keyHandler.spaceJustPressed) {
-            y -= (int) vel.y; // undo pre-collision-check move
+//            y -= (int) vel.y; // undo pre-collision-check move
             vel.y = settings.PLAYER_JUMP_V;
-            y += (int) vel.y; // do the updated move
-            keyHandler.spaceJustPressed = false;
+//            y += (int) vel.y; // do the updated move
         } else {
             vel.y = 0;
         }

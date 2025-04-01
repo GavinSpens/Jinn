@@ -7,6 +7,7 @@ public class KeyHandler implements KeyListener {
 
     public boolean upPressed, downPressed, leftPressed, rightPressed;
     public boolean spacePressed, spaceJustPressed;
+    public boolean periodPressed, periodJustPressed;
 
     @Override
     public void keyTyped(KeyEvent e) {}
@@ -29,10 +30,13 @@ public class KeyHandler implements KeyListener {
         }
 
         if (code == KeyEvent.VK_SPACE) {
-            if (!spacePressed) {
-                spaceJustPressed = true;
-            }
+            spaceJustPressed = !spacePressed;
             spacePressed = true;
+        }
+
+        if (code == KeyEvent.VK_PERIOD) {
+            periodJustPressed = !periodPressed;
+            periodPressed = true;
         }
     }
 
@@ -56,6 +60,11 @@ public class KeyHandler implements KeyListener {
         if (code == KeyEvent.VK_SPACE) {
             spacePressed = false;
             spaceJustPressed = false;
+        }
+
+        if (code == KeyEvent.VK_PERIOD) {
+            periodPressed = false;
+            periodJustPressed = false;
         }
     }
 }

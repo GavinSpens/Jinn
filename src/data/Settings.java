@@ -5,7 +5,9 @@ import java.awt.*;
 public class Settings {
     private static Settings instance;
 
-    public final int FPS = 5;
+    public final boolean FRAME_BY_FRAME = true;
+
+    public final int FPS = 60;
     public final int TILE_SIZE = 8;
 
     public final double GRAVITY = 0.2;
