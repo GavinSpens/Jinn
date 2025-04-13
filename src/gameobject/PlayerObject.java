@@ -4,9 +4,12 @@ import data.Settings;
 import level.Level;
 import level.TileType;
 import main.KeyHandler;
+import utility.Coordinate;
 
 public class PlayerObject extends GameObject {
     private final Settings settings = Settings.getInstance();
+
+    private boolean grounded;
 
     public PlayerObject() {
         super(
@@ -28,16 +31,14 @@ public class PlayerObject extends GameObject {
 
         accountForMaxSpeed();
 
-        if ((int)vel.y == 0) {
-            vel.y = 1;
-        }
+//        if ((int)vel.y == 0) {
+//            vel.y = 1;
+//        }
 
         x += (int)vel.x;
         y += (int)vel.y;
 
-        TileType collisions = checkCollisions(level);
-
-        updateForCollisions(collisions, keyHandler);
+        updateForCollisions(keyHandler, level);
     }
 
     private void updateVelX(KeyHandler keyHandler) {
@@ -57,43 +58,64 @@ public class PlayerObject extends GameObject {
     }
 
     private void updateVelY(KeyHandler keyHandler) {
-        if (keyHandler.spacePressed) {
-            vel.y += settings.PLAYER_JUMP_GRAVITY;
+        if (grounded) {
+            if (keyHandler.spacePressed) {
+                vel.y = settings.PLAYER_JUMP_V;
+                grounded = false;
+            } else {
+                vel.y = 0;
+            }
         } else {
-            vel.y += settings.GRAVITY;
+            if (keyHandler.spacePressed) {
+                vel.y += settings.PLAYER_JUMP_GRAVITY;
+            } else {
+                vel.y += settings.GRAVITY;
+            }
+            if ((int)vel.y == 0) {
+                vel.y = 1;
+            }
         }
     }
 
-    private void updateForCollisions(TileType tileType, KeyHandler keyHandler) {
-        if (tileType != TileType.NONE) {
+    private void updateForCollisions(KeyHandler keyHandler, Level level) {
+        if (grounded) {
+            TileType leftGround = level.getTileAtPixel(new Coordinate(x, y + height));
+            TileType rightGround = level.getTileAtPixel(new Coordinate(x + width - 1, y + height));
+            if (leftGround != TileType.FLOOR && rightGround != TileType.FLOOR) {
+                grounded = false;
+            }
+        }
+
+        TileType collisions = checkCollisions(level);
+        if (collisions != TileType.NONE) {
             if (movingRight()) {
                 if (movingDown()) {
-                    if (distToNextTileLeft() < distToNextTileUp()) {
-                        updateForRightCollision();
-                    } else {
+                    if (distToNextTileLeft() > distToNextTileUp()) {
                         updateForDownCollision(keyHandler);
+                    } else {
+                        updateForRightCollision();
                     }
                 } else if (movingUp()) {
-                    if (distToNextTileLeft() < distToNextTileDown()) {
-                        updateForRightCollision();
-                    } else {
+                    if (distToNextTileLeft() > distToNextTileDown()) {
                         updateForUpCollision();
+                    } else {
+                        updateForRightCollision();
                     }
                 } else {
                     updateForRightCollision();
                 }
             } else if (movingLeft()) {
                 if (movingDown()) {
-                    if (distToNextTileRight() < distToNextTileUp()) {
-                        updateForLeftCollision();
-                    } else {
+                    if (distToNextTileRight() > distToNextTileUp()) {
                         updateForDownCollision(keyHandler);
+                    } else {
+                        updateForLeftCollision();
                     }
                 } else if (movingUp()) {
-                    if (distToNextTileRight() < distToNextTileDown()) {
-                        updateForLeftCollision();
-                    } else {
+                    if (distToNextTileRight() > distToNextTileDown()) {
                         updateForUpCollision();
+                    } else {
+                        updateForLeftCollision();
                     }
                 } else {
                     updateForLeftCollision();
@@ -104,9 +126,10 @@ public class PlayerObject extends GameObject {
                 } else if (movingDown()) {
                     updateForDownCollision(keyHandler);
                 } else {
-                    throw new RuntimeException("Uhh... How'd you manage that?\nColliding Tile: " + tileType + "\nVelocity: " + vel);
+                    throw new RuntimeException("Uhh... How'd you manage that?\nColliding Tile: " + collisions + "\nVelocity: " + vel);
                 }
             }
+            updateForCollisions(keyHandler, level);
         }
     }
 
@@ -127,15 +150,14 @@ public class PlayerObject extends GameObject {
     }
 
     private void updateForDownCollision(KeyHandler keyHandler) {
+        vel.y = 0;
         y -= distToNextTileUp();
-
-        if (keyHandler.spaceJustPressed) {
-//            y -= (int) vel.y; // undo pre-collision-check move
-            vel.y = settings.PLAYER_JUMP_V;
-//            y += (int) vel.y; // do the updated move
-        } else {
-            vel.y = 0;
-        }
+        grounded = true;
+//        if (keyHandler.spacePressed) {
+//            vel.y = settings.PLAYER_JUMP_V;
+//        } else {
+//            vel.y = 0;
+//        }
     }
 
     private void updateForUpCollision() {

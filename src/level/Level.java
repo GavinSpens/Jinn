@@ -13,8 +13,8 @@ import java.io.IOException;
 
 public class Level {
     private final int tileSize;
-    private final int tilesX = 32;
-    private final int tilesY = 18;
+    private int tilesX;
+    private int tilesY;
     private final String imgPath = "C:\\Users\\gavin\\OneDrive\\Desktop\\Random_programming\\Java\\Jinn\\src\\data\\images\\block.png";
     private final Image block;
 
@@ -39,11 +39,16 @@ public class Level {
 
     private void getLevelData(String filename) {
         int[][] levelData;
-        levelData = new int[tilesX][tilesY];
         String filePath = "C:\\Users\\gavin\\OneDrive\\Desktop\\Random_programming\\Java\\Jinn\\src\\data\\" + filename;
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             int lineNum = 0;
+            if ((line = reader.readLine()) != null) {
+                String[] dimensions = line.split(" ");
+                tilesX = Integer.parseInt(dimensions[0]);
+                tilesY = Integer.parseInt(dimensions[1]);
+            }
+            levelData = new int[tilesX][tilesY];
             while ((line = reader.readLine()) != null) {
                 line = line.replace(" ", "");
                 for (int i = 0; i < line.length(); i++) {

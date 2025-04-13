@@ -10,7 +10,7 @@ public class Settings {
     public final int FPS = 60;
     public final int TILE_SIZE = 8;
 
-    public final double GRAVITY = 0.2;
+    public final double GRAVITY = 0.3;
 
     public final int PLAYER_WIDTH = 6;
     public final int PLAYER_HEIGHT = 8;
@@ -19,7 +19,7 @@ public class Settings {
     public final double PLAYER_MAX_SPEED_X = 1;
     public final double PLAYER_MAX_SPEED_Y = 4;
     public final double PLAYER_WALK_ACCEL = 0.5;
-    public final double PLAYER_JUMP_V = -4;
+    public final double PLAYER_JUMP_V = -3;
     public final double PLAYER_JUMP_GRAVITY = 0.1;
     public final double PLAYER_BUMP_HEAD_FRAC = 0.2;
 

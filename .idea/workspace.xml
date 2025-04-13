@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c5995063-db56-454f-b7bc-1e33020f6222" name="Changes" comment="lots">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Level1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameobject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameobject/Player.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameobject/PlayerObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameobject/PlayerObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/level/Level.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743460657858</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="lots">
+      <option name="closed" value="true" />
+      <created>1743488125626</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743488125626</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
