@@ -15,7 +15,7 @@ public class Level {
     private final int tileSize;
     private int tilesX;
     private int tilesY;
-    private final String imgPath = "C:\\Users\\gavin\\OneDrive\\Desktop\\Random_programming\\Java\\Jinn\\src\\data\\images\\block.png";
+    private final String imgPath = Settings.getInstance().IMAGE_FOLDER + "block.png";
     private final Image block;
 
     public Tile[][] tiles;
@@ -78,8 +78,6 @@ public class Level {
                 int y = j * tileSize;
                 switch (tiles[i][j].tileType) {
                     case FLOOR:
-//                        g2.setColor(Color.WHITE);
-//                        g2.fillRect(x, y, tileSize, tileSize);
                         g2.drawImage(block, x, y, tileSize, tileSize, jPanel);
                     case NONE:
                         continue;

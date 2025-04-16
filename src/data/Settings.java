@@ -2,14 +2,11 @@ package data;
 
 import java.awt.*;
 
-public class Settings {
+public final class Settings {
     private static Settings instance;
-
-    public final boolean FRAME_BY_FRAME = true;
 
     public final int FPS = 60;
     public final int TILE_SIZE = 8;
-
     public final double GRAVITY = 0.3;
 
     public final int PLAYER_WIDTH = 6;

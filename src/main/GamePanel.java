@@ -9,12 +9,11 @@ import java.awt.*;
 
 public class GamePanel extends JPanel implements Runnable {
     private final Settings settings;
-
+    private final KeyHandler keyHandler;
     private final Level level;
     private final PlayerObject player;
 
-    Thread gameThread;
-    KeyHandler keyHandler;
+    private Thread gameThread;
 
     public GamePanel() {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
@@ -49,8 +48,10 @@ public class GamePanel extends JPanel implements Runnable {
             long remainingTime = (long) (nextDrawTime - System.nanoTime()) / 1000000;
             if (remainingTime > 0) {
                 try {
+                    //noinspection BusyWait
                     Thread.sleep(remainingTime);
                 } catch (InterruptedException e) {
+                    //noinspection CallToPrintStackTrace
                     e.printStackTrace();
                 }
             }

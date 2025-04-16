@@ -31,10 +31,6 @@ public class PlayerObject extends GameObject {
 
         accountForMaxSpeed();
 
-//        if ((int)vel.y == 0) {
-//            vel.y = 1;
-//        }
-
         x += (int)vel.x;
         y += (int)vel.y;
 
